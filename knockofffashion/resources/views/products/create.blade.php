@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<h1>Skapa ny produkt</h1>
+<h1>Create new product</h1>
 
 @if ($errors->any())
     <div>
@@ -39,6 +39,6 @@
     <input type="number" name="stock" value="{{ old('stock') }}">
     <br>
 
-    <button type="submit">Skapa produkt</button>
+    <button type="submit">Create Product</button>
 </form>
 @endsection
