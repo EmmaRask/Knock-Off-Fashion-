@@ -1,10 +1,8 @@
+<x-app-layout>
+    <x-slot name="header">
+        <h2>Update your product</h2>
+    </x-slot>
 
-@extends('layouts.app')
-
-@section('content')
-
-   
-<h1>Update your product</h1>
 
 @if ($errors->any())
     <div>
@@ -46,4 +44,4 @@
 
     <button type="submit">Update Product</button>
 </form>
-@endsection
+</x-app-layout>

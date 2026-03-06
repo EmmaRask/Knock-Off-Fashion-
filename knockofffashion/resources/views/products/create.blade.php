@@ -1,7 +1,7 @@
-@extends('layouts.app')
-
-@section('content')
-<h1>Create new product</h1>
+<x-app-layout>
+    <x-slot name="header">
+        <h2>Create new product</h2>
+    </x-slot>
 
 @if ($errors->any())
     <div>
@@ -41,4 +41,4 @@
 
     <button type="submit">Create Product</button>
 </form>
-@endsection
+</x-app-layout>
