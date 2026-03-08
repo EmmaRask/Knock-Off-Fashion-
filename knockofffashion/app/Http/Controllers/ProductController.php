@@ -14,10 +14,20 @@ class ProductController extends Controller
     {
         $products = Product::query()
             ->when($request->brand_name, function ($query, $brand) {
-                $query->where('brand_name', 'like', "%{$brand}%");
+                $brand = strtolower(str_replace(' ', '', $brand));
+
+                $query->whereRaw(
+                    "REPLACE(LOWER(brand_name), ' ', '') LIKE ?",
+                    ["%{$brand}%"]
+                );
             })
             ->when($request->category, function ($query, $category) {
-                $query->where('category', $category);
+                $category = strtolower(str_replace(' ', '', $category));
+
+                $query->whereRaw(
+                    "REPLACE(LOWER(category), ' ', '') LIKE ?",
+                    ["%{$category}%"]
+                );
             })
             ->when($request->min_price, function ($query, $min) {
                 $query->where('price', '>=', $min);
