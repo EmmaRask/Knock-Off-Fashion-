@@ -1,7 +1,7 @@
 <x-app-layout>
 
 <x-slot name="header">
-    <h2 class="text-xl font-semibold">All Products</h2>
+    <h2 class="text-xl font-semibold">All Products - Knock Off Fashion</h2>
 </x-slot>
 
 <main class="p-6">
