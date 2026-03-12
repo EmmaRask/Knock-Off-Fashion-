@@ -1,151 +1,246 @@
 # Knock Off Fashion – Admin Panel
 
-Knock Off Fashion is a Laravel-based admin tool for managing products in a fictional online fashion store.
+Knock Off Fashion is a Laravel-based admin interface for managing products in a fictional fashion web shop.
 
 Why buy Gucci when you can buy Guggi?
 
-This project simulates a web shop admin system where an administrator can manage products using a Laravel application.
+The application simulates a simple administration system where a user can manage products in a clothing store database.
 
----
+This project was created as part of a course assignment to demonstrate understanding of Laravel development, MVC architecture, CRUD operations, filtering, pagination, and accessibility (WCAG).
 
-## Project Purpose
+Project Features
+Product Management (CRUD)
 
-The purpose of this project is to demonstrate understanding of:
+The administrator can:
 
-- The Laravel framework
-- MVC architecture
-- CRUD functionality
-- Database migrations and seeders
-- Basic filtering
-- Accessibility (a11y)
-- Professional project structure using GitHub and Gitflow
+-Create products
 
----
+-View all products
 
-## Features (G Requirements)
+-Update product information
 
-### Product Management (CRUD)
-The user can:
+-Delete products
 
-- Create a product
-- View all products
-- Update a product
-- Delete a product
+Products contain information such as:
 
----
+-Brand name
 
-### Filtering
+-Description
 
-The user can filter products by:
+-Price
 
-- Category
-- Color
-- Price range
+-Category
 
----
+-Color
 
-### Factory & Seeder
+-Stock quantity
+
+-Filtering
+
+Products can be filtered by:
+
+-Brand name
+
+-Category
+
+-Price range
+
+Filtering is handled through query parameters and controller logic.
+
+-Pagination
+
+Product listings use Laravel pagination to limit the number of products shown per page and improve usability.
+
+-Database Factory & Seeder
 
 The project includes:
 
-- A Product Factory
-- A Database Seeder
+-A Product Factory
 
-This ensures the application looks the same on every machine with realistic mock data (e.g., clothing categories, colors, prices).
+-A Database Seeder
 
----
+This ensures the database can be populated with realistic mock fashion products, making the application look the same on different machines.
 
-### Accessibility (a11y)
+Example data includes clothing brands, colors, categories, and price ranges.
 
-The following accessibility improvements have been implemented:
+Accessibility (WCAG)
 
-- Semantic HTML structure (`<main>`, `<nav>`, `<section>`, `<article>`)
-- Properly labeled form inputs using `<label for="">`
-- Clear and accessible error messages
-- Sufficient color contrast between text and background
-- Error states are not conveyed using color only
-- Legible fonts and layout tested with browser zoom
+Several accessibility practices have been implemented:
 
----
+-Semantic HTML
 
-## Tech Stack
+-The interface uses semantic elements such as:
 
-- Laravel 12
-- PHP
-- SQLite
-- Blade templating engine
+<nav>
 
----
+<main>
 
-## Installation
+<section>
 
-1. Clone the repository
+<table>
 
-2. Install dependencies:
+<form>
 
-   composer install
+-This improves navigation for assistive technologies.
 
-3. Copy the environment file:
+Form Accessibility
 
-   cp .env.example .env
+Forms include:
 
-4. Generate application key:
+-Proper <label for=""> associations
 
-   php artisan key:generate
+-Accessible error messages
 
-5. Run migrations:
+-Clear input instructions
 
-   php artisan migrate
+-Error Handling
 
-6. Seed the database:
+-Validation errors display text explanations, not just visual indicators such as color.
 
-   php artisan db:seed
+Example:
 
-7. Start the development server:
+-"The price field must be a number."
 
-   php artisan serve
+-Color Usage
+
+-Color is not used as the only indicator for errors or status messages.
+
+-Text Resizing
+
+The layout has been tested with browser zoom to ensure content remains readable and usable.
+Horizontal scrolling is allowed for large tables as long as content remains accessible.
+
+Tech Stack
+
+Backend
+
+-Laravel 12
+
+-PHP
+
+-SQLite
+
+Frontend
+
+-Blade templating engine
+
+-Tailwind CSS
+
+-DaisyUI
+
+Authentication
+
+-Laravel Breeze
+
+Development Tools
+
+-Composer
+
+-Node.js
+
+-Vite
+
+-GitHub
+
+Authentication
+
+Authentication is implemented using Laravel Breeze.
+
+For this project, registration is not used.
+A predefined admin account is used instead.
+
+Login:
+
+Email: admin@test.com
+Password: password
+
+Installation
+
+Follow these steps to run the project locally.
+
+1 Clone the repository
+git clone https://github.com/YOUR-REPOSITORY-URL
+
+Navigate into the project folder:
+
+cd Knock-Off-Fashion-/knockofffashion/
+
+2 Install PHP dependencies
+composer install
+
+3 Install frontend dependencies
+npm install
+npm run build
+
+4 Create environment file
+cp .env.example .env
+
+5 Generate application key
+php artisan key:generate
+
+6 Run database migrations
+php artisan migrate
+If prompted with the option to create a database, select "Yes"
+
+7 Seed the database
+php artisan db:seed
+
+This will generate sample product data.
+
+8 Start the development server
+
+Run Laravel:
+
+php artisan serve
+
+9 Open the application
 
 Visit:
 
 http://127.0.0.1:8000
+Project Structure
 
----
+The application follows Laravel's MVC architecture.
 
-## Project Structure
+app/
+ ├── Http/
+ │   ├── Controllers
+ │   │   ├── ProductController.php
+ │   │   └── ProfileController.php
+ │   └── Requests
+ │
+ ├── Models
+ │   └── Product.php
+ │
+resources/
+ ├── views/
+ │   ├── layouts
+ │   ├── products
+ │   ├── profile
+ │   └── dashboard.blade.php
+ │
+database/
+ ├── factories
+ └── seeders
+Models
 
-The application follows MVC architecture:
+Handle database interaction and business logic.
 
-- Models handle data logic
-- Controllers handle requests
-- Views handle presentation
+Controllers
 
----
+Handle incoming requests and application logic.
 
-## Collaboration & Workflow
+Views
 
-This project uses:
+Blade templates responsible for the user interface.
 
-- GitHub for version control
-- Gitflow workflow
-- Feature branches
-- GitHub Issues for task management
+Authors
 
-Main branches:
-
-- main (stable version)
-- develop (integration branch)
-- feature/* (individual tasks)
-
----
-
-## Authors
-
-Emma Backman  
+Emma Backman
 Olof Björn
 
----
+Disclaimer
 
-## Disclaimer
+This project was created for educational purposes.
 
-This is a fictional project created for educational purposes.
-All brand references (e.g., "Guggi") are fictional.
+All brand references (such as Guggi) are fictional.
