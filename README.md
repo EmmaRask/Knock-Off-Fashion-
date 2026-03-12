@@ -8,68 +8,68 @@ The application simulates a simple administration system where a user can manage
 
 This project was created as part of a course assignment to demonstrate understanding of Laravel development, MVC architecture, CRUD operations, filtering, pagination, and accessibility (WCAG).
 
-Project Features
-Product Management (CRUD)
+# Project Features
+## Product Management (CRUD)
 
 The administrator can:
 
--Create products
+- Create products
 
--View all products
+- View all products
 
--Update product information
+- Update product information
 
--Delete products
+- Delete products
 
 Products contain information such as:
 
--Brand name
+- Brand name
 
--Description
+- Description
 
--Price
+- Price
 
--Category
+- Category
 
--Color
+- Color
 
--Stock quantity
+- Stock quantity
 
--Filtering
+## Filtering
 
 Products can be filtered by:
 
--Brand name
+- Brand name
 
--Category
+- Category
 
--Price range
+- Price range
 
 Filtering is handled through query parameters and controller logic.
 
--Pagination
+## Pagination
 
 Product listings use Laravel pagination to limit the number of products shown per page and improve usability.
 
--Database Factory & Seeder
+## Database Factory & Seeder
 
 The project includes:
 
--A Product Factory
+- A Product Factory
 
--A Database Seeder
+- A Database Seeder
 
 This ensures the database can be populated with realistic mock fashion products, making the application look the same on different machines.
 
 Example data includes clothing brands, colors, categories, and price ranges.
 
-Accessibility (WCAG)
+# Accessibility (WCAG)
 
 Several accessibility practices have been implemented:
 
--Semantic HTML
+Semantic HTML
 
--The interface uses semantic elements such as:
+The interface uses semantic elements such as:
 
 <nav>
 
@@ -81,167 +81,182 @@ Several accessibility practices have been implemented:
 
 <form>
 
--This improves navigation for assistive technologies.
+This improves navigation for assistive technologies.
 
-Form Accessibility
+## Form Accessibility
 
 Forms include:
 
--Proper <label for=""> associations
+- Proper <label for=""> associations
 
--Accessible error messages
+- Accessible error messages
 
--Clear input instructions
+- Clear input instructions
 
--Error Handling
+- Error Handling
 
--Validation errors display text explanations, not just visual indicators such as color.
+Validation errors display text explanations, not just visual indicators such as color.
 
-Example:
+## Example:
 
--"The price field must be a number."
+"The price field must be a number."
 
--Color Usage
+## Color Usage
 
--Color is not used as the only indicator for errors or status messages.
+Color is not used as the only indicator for errors or status messages.
 
--Text Resizing
+## Text Resizing
 
 The layout has been tested with browser zoom to ensure content remains readable and usable.
 Horizontal scrolling is allowed for large tables as long as content remains accessible.
 
-Tech Stack
+# Tech Stack
 
-Backend
+## Backend
 
--Laravel 12
+- Laravel 12
 
--PHP
+- PHP
 
--SQLite
+- SQLite
 
-Frontend
+## Frontend
 
--Blade templating engine
+- Blade templating engine
 
--Tailwind CSS
+- Tailwind CSS
 
--DaisyUI
+- DaisyUI
 
-Authentication
+## Authentication
 
--Laravel Breeze
+- Laravel Breeze
 
-Development Tools
+## Development Tools
 
--Composer
+- Composer
 
--Node.js
+- Node.js
 
--Vite
+- Vite
 
--GitHub
+- GitHub
 
-Authentication
+## Authentication
 
 Authentication is implemented using Laravel Breeze.
 
 For this project, registration is not used.
 A predefined admin account is used instead.
 
-Login:
+## Example login:
 
-Email: admin@test.com
+Email: test@example.com
+
 Password: password
 
-Installation
+# Installation
 
 Follow these steps to run the project locally.
 
-1 Clone the repository
+## 1: Clone the repository
 git clone https://github.com/YOUR-REPOSITORY-URL
 
 Navigate into the project folder:
 
 cd Knock-Off-Fashion-/knockofffashion/
-
-2 Install PHP dependencies
+## 2: Install PHP dependencies
 composer install
-
-3 Install frontend dependencies
+## 3: Install frontend dependencies
 npm install
 npm run build
-
-4 Create environment file
+## 4: Create environment file
 cp .env.example .env
-
-5 Generate application key
+## 5: Generate application key
 php artisan key:generate
-
-6 Run database migrations
+## 6: Run database migrations
 php artisan migrate
-If prompted with the option to create a database, select "Yes"
-
-7 Seed the database
+- If prompted with the option to create a database, select "Yes"
+## 7: Seed the database
 php artisan db:seed
 
-This will generate sample product data.
+- This will generate sample product data.
 
-8 Start the development server
+## 8: Start the development server
 
-Run Laravel:
+- Run Laravel:
 
 php artisan serve
 
-9 Open the application
+## 9: Open the application
 
 Visit:
 
 http://127.0.0.1:8000
 
-
-Project Structure
+# Project Structure
 
 The application follows Laravel's MVC architecture.
 
 app/
+
  ├── Http/
+ 
  │   ├── Controllers
+ 
  │   │   ├── ProductController.php
+ 
  │   │   └── ProfileController.php
+ 
  │   └── Requests
+ 
  │
+ 
  ├── Models
+ 
  │   └── Product.php
+ 
  │
+ 
 resources/
+
  ├── views/
+ 
  │   ├── layouts
+ 
  │   ├── products
+ 
  │   ├── profile
+ 
  │   └── dashboard.blade.php
+ 
  │
+ 
 database/
+
  ├── factories
+ 
  └── seeders
-Models
+ 
+## Models
 
 Handle database interaction and business logic.
 
-Controllers
+## Controllers
 
 Handle incoming requests and application logic.
 
-Views
+## Views
 
 Blade templates responsible for the user interface.
 
-Authors
+## Authors
 
 Emma Backman
+
 Olof Björn
 
-Disclaimer
+# Disclaimer
 
 This project was created for educational purposes.
 
