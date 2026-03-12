@@ -198,6 +198,8 @@ php artisan serve
 Visit:
 
 http://127.0.0.1:8000
+
+
 Project Structure
 
 The application follows Laravel's MVC architecture.
