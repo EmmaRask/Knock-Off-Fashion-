@@ -83,6 +83,9 @@
             </table>
         </div>
     </section>
+    <div class="mt-6">
+        {{ $products->links() }}
+    </div>
 </main>
 
 </x-app-layout>

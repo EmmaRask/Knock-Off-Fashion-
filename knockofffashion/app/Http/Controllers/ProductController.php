@@ -35,7 +35,8 @@ class ProductController extends Controller
             ->when($request->max_price, function ($query, $max) {
                 $query->where('price', '<=', $max);
             })
-            ->get();
+            ->paginate(10)
+            ->withQueryString();
 
         return view('products.index', compact('products'));
     }
