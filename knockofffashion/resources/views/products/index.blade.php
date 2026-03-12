@@ -11,11 +11,11 @@
         </div>
     @endif
 
-    <div class="flex items-center justify-between mb-6">
+    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
         <a href="{{ route('products.create') }}" class="inline-flex items-center gap-2 rounded bg-indigo-600 px-4 py-2 text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500">
             Create New Product
         </a>
-        <form method="GET" action="{{ route('products.index') }}" aria-label="Filter products" class="flex gap-3">
+        <form method="GET" action="{{ route('products.index') }}" aria-label="Filter products" class="flex flex-col sm:flex-row gap-3">
             <label for="filter-brand" class="sr-only">Brand</label>
             <input id="filter-brand" name="brand_name" type="text" placeholder="Brand" value="{{ request('brand_name') }}" class="rounded border px-3 py-2" />
 
