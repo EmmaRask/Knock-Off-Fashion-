@@ -151,7 +151,7 @@ A predefined admin account is used instead.
 
 ## Example login:
 
-Email: test@example.com
+Email: admin@test.com
 
 Password: password
 
@@ -160,7 +160,7 @@ Password: password
 Follow these steps to run the project locally.
 
 ## 1: Clone the repository
-git clone https://github.com/YOUR-REPOSITORY-URL
+https://github.com/EmmaRask/Knock-Off-Fashion-.git
 
 Navigate into the project folder:
 
