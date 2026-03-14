@@ -25,6 +25,8 @@ Products contain information such as:
 
 - Brand name
 
+- Product name
+
 - Description
 
 - Price
@@ -35,11 +37,14 @@ Products contain information such as:
 
 - Stock quantity
 
+
 ## Filtering
 
 Products can be filtered by:
 
 - Brand name
+
+- Product name
 
 - Category
 
@@ -62,6 +67,12 @@ The project includes:
 This ensures the database can be populated with realistic mock fashion products, making the application look the same on different machines.
 
 Example data includes clothing brands, colors, categories, and price ranges.
+
+Database Structure
+
+Products include both a brand name and a product name. 
+This makes the catalog more realistic and allows administrators to distinguish between different items from the same brand.
+
 
 # Accessibility (WCAG)
 
