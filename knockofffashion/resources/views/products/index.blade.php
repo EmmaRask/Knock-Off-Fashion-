@@ -19,6 +19,10 @@
             <label for="filter-brand" class="sr-only">Brand</label>
             <input id="filter-brand" name="brand_name" type="text" placeholder="Brand" value="{{ request('brand_name') }}" class="rounded border px-3 py-2" />
 
+            <form method="GET" action="{{ route('products.index') }}" aria-label="Filter products" class="flex flex-col sm:flex-row gap-3">
+            <label for="filter-product-name" class="sr-only">Product name</label>
+            <input id="filter-product-name" name="product_name" type="text" placeholder="Product name" value="{{ request('product_name') }}" class="rounded border px-3 py-2" />
+
             <label for="filter-category" class="sr-only">Category</label>
             <input id="filter-category" name="category" type="text" placeholder="Category" value="{{ request('category') }}" class="rounded border px-3 py-2" />
 
@@ -41,6 +45,7 @@
                 <thead class="bg-gray-50">
                     <tr>
                         <th scope="col" class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Brand</th>
+                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Product name</th>
                         <th scope="col" class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Description</th>
                         <th scope="col" class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Price</th>
                         <th scope="col" class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Category</th>
@@ -53,6 +58,7 @@
                     @forelse($products as $product)
                         <tr>
                             <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{{ $product->brand_name }}</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{{ $product->product_name }}</td>
                             <td class="px-6 py-4 text-sm text-gray-700">{{ $product->description }}</td>
                             <td class="px-6 py-4 text-sm text-gray-900">SEK {{ number_format($product->price, 2) }}</td>
                             <td class="px-6 py-4 text-sm text-gray-700">{{ $product->category }}</td>
@@ -115,7 +121,7 @@
                 </tr>
                     @empty
                         <tr>
-                            <td class="px-6 py-4 text-sm text-gray-700" colspan="7">No products found.</td>
+                            <td class="px-6 py-4 text-sm text-gray-700" colspan="8">No products found.</td>
                         </tr>
                     @endforelse
                 </tbody>

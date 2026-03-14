@@ -46,6 +46,22 @@
                     @enderror
             </div>
 
+             <div>
+                <label for="product_name" class="block font-medium">Product name</label>
+                <input
+                    id="product_name"
+                    name="product_name"
+                    type="text"
+                    value="{{ old('product_name', $product->brand_name) }}"
+                    class="mt-1 block w-full border px-2 py-1"
+                    aria-invalid="{{ $errors->has('product_name') ? 'true' : 'false' }}"
+                    aria-describedby="{{ $errors->has('product_name') ? 'product_name-error' : '' }}"
+                >
+                    @error('product_name')
+                        <p id="product_name-help" class="text-sm text-gray-600 mt-1">Maximum 50 characters.</p>                
+                    @enderror
+            </div>
+
             <div>
                 <label for="price" class="block font-medium">Price</label>
                 <input
