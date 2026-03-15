@@ -180,13 +180,14 @@ cd Knock-Off-Fashion-/knockofffashion/
 composer install
 ## 3: Install frontend dependencies
 npm install
+
 npm run build
 ## 4: Create environment file
 cp .env.example .env
 ## 5: Generate application key
 php artisan key:generate
 ## 6: Run database migrations
-php artisan migrate
+php artisan migrate 
 - If prompted with the option to create a database, select "Yes"
 ## 7: Seed the database
 php artisan db:seed
